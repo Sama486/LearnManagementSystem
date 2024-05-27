@@ -6,6 +6,8 @@ import { redirect } from "next/navigation"
 import { get } from "react-hook-form"
 import TitleForm from "./_components/title-form"
 import DescriptionForm from "./_components/description-form"
+import CategoryForm from "./_components/category-form"
+import ImageForm from "./_components/image-form"
 
 const CourseIdPage = async ({params}) => {
 
@@ -20,6 +22,14 @@ const CourseIdPage = async ({params}) => {
             id: params.courseId
         }
     })
+
+    const categories = await db.category.findMany({
+        orderBy: {
+            name: "asc"
+        }
+    })
+
+    console.log(categories);
 
     if (!course) {
         return redirect("/")
@@ -67,6 +77,18 @@ const CourseIdPage = async ({params}) => {
                 <DescriptionForm 
                  initialData={course}
                  courseId={course.id}
+                />
+                <ImageForm
+                 initialData={course}
+                 courseId={course.id}
+                />
+                <CategoryForm 
+                 initialData={course}
+                 courseId={course.id}
+                 options={categories.map((category) => ({
+                        label: category.name,
+                        value: category.id
+                 }))}
                 />
             </div>
         </div>
