@@ -30,7 +30,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/category-form.jsx", "app/(dashboard)/(routes)/teacher/courses/[courseId]/_components/category-form.jsx", "components/ui/combobox.jsx"  ],
   "exclude": [
     "node_modules"
   ]
