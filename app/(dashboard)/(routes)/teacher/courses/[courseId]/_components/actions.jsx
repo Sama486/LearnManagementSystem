@@ -21,6 +21,7 @@ const Actions = ({ disabled, courseId, isPublished }) => {
             if (isPublished) {
                 await axios.patch(`/api/courses/${courseId}/unpublish`)
                 toast.success("Course unpublished")
+                confetti.close()
             } else {
                 await axios.patch(`/api/courses/${courseId}/publish`)
                 toast.success("Course published")
