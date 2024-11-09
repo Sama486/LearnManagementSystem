@@ -4,6 +4,11 @@ const database = new PrismaClient()
 
 async function main() {
     try {
+        await database.category.deleteMany({
+            where: {}
+        })
+
+
         await database.category.createMany({
             data: [
                 { name: "Web Development" },
@@ -13,6 +18,8 @@ async function main() {
                 { name: "Photography" },
                 { name: "Engineering" },
                 { name: "Filming" },
+                { name: "Business" },
+                { name: "Finance" },
             ]
         })
 

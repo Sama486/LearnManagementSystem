@@ -100,7 +100,7 @@ const ChaptersForm = ({
                             name="title"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel htmlFor="description">Description</FormLabel>
+                                    <FormLabel htmlFor="description">Courses</FormLabel>
                                     <FormControl>
                                         <Input disabled={isSubmitting} placeholder="e.g. 'Indroduction to your course'" {...field} />
                                     </FormControl>

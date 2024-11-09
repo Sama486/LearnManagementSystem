@@ -9,7 +9,9 @@ export const CourseSidebarItem = ({ id, label, isCompleted, courseId, isLocked }
     const patname = usePathname()
     const router = useRouter()
 
-    const Icon = isLocked ? Lock : isCompleted ? CheckCircle : PlayCircle
+
+    
+    const Icon = isLocked ? Lock : (isCompleted ? CheckCircle : PlayCircle)
 
     const isActive = patname?.includes(id)
 
